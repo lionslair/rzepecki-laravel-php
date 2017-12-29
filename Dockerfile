@@ -1,8 +1,6 @@
 FROM ubuntu:16.04
 MAINTAINER Nathan Rzepecki <nathan@lionslair.net.au>
 
-#ENV MYSQLTMPROOT temprootpass
-
 RUN apt-get update && apt-get install -y
 
 # add nginx
