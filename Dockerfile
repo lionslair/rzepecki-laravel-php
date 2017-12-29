@@ -9,11 +9,14 @@ RUN apt-get update && apt-get install -y
 # Add normal packages
 RUN apt-get install -y software-properties-common python-software-properties git curl wget zip unzip bzip2 tar less openssh-client gettext ruby python python3 perl memcached libzip-dev libmcrypt-dev apt-transport-https automake autoconf
 
+# Add sqlite3
+RUN apt-get install -y sqlite3 libsqlite3-dev
+
 # Add mysql
-ENV DEBIAN_FRONTEND=noninteractive
-RUN echo "mysql-server mysql-server/root_password password " | debconf-set-selections
-RUN echo "mysql-server mysql-server/root_password_again password " | debconf-set-selections
-RUN apt-get -y install mysql-server mysql-client libmysqlclient-dev
+#ENV DEBIAN_FRONTEND=noninteractive
+#RUN echo "mysql-server mysql-server/root_password password " | debconf-set-selections
+#RUN echo "mysql-server mysql-server/root_password_again password " | debconf-set-selections
+#RUN apt-get -y install mysql-server mysql-client libmysqlclient-dev
 #RUN mysql_secure_installation
 
 # Add repo for php 7.2 https://launchpad.net/~ondrej/+archive/ubuntu/php/+index?batch=75&memo=150&start=150
