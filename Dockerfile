@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y
 RUN apt-get install -y software-properties-common python-software-properties git curl wget zip unzip bzip2 tar less openssh-client gettext ruby python python3 perl memcached libzip-dev libmcrypt-dev apt-transport-https automake autoconf
 
 # Add sqlite3
-RUN apt-get install -y sqlite3 libsqlite3-dev
+RUN apt-get install -y sqlite libsqlite-dev
 
 # Add mysql
 #ENV DEBIAN_FRONTEND=noninteractive
