@@ -7,8 +7,9 @@ RUN apt-get update && apt-get install -y
 #RUN apt-get install -y nginx
 
 # Add normal packages
-RUN apt-get install -y software-properties-common python-software-properties git curl wget zip unzip openssh-client gettext ruby python python3 perl memcached libzip-dev libmcrypt-dev
+RUN apt-get install -y software-properties-common python-software-properties git curl wget zip unzip openssh-client gettext ruby python python3 perl memcached libzip-dev libmcrypt-dev apt-transport-https
 
+# Add repo for php 7.2 https://launchpad.net/~ondrej/+archive/ubuntu/php/+index?batch=75&memo=150&start=150
 RUN LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php
 RUN apt-get update -y
 
@@ -22,4 +23,6 @@ RUN apt-get install -y nodejs
 RUN apt-get install -y composer
 
 # add yarn
-RUN apt-get install -y yarn
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+RUN apt-get update && sudo apt-get install -y yarn
