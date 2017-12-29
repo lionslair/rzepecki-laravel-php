@@ -17,7 +17,6 @@ RUN echo "mysql-server mysql-server/root_password password " | debconf-set-selec
 RUN echo "mysql-server mysql-server/root_password_again password " | debconf-set-selections
 RUN apt-get -y install mysql-server mysql-client libmysqlclient-dev
 #RUN mysql_secure_installation
-#ENV DEBIAN_FRONTEND=interactive
 
 # Add repo for php 7.2 https://launchpad.net/~ondrej/+archive/ubuntu/php/+index?batch=75&memo=150&start=150
 RUN LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php
