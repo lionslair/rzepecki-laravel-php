@@ -20,6 +20,7 @@ RUN apt-get install -y php7.2 php7.2-bcmath php7.2-bz2 php7.2-cli php7.2-common 
 RUN apt-get install -y php-redis
 
 # add nodejs
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 RUN apt-get install -y nodejs
 
 # add composer
