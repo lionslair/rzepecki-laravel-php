@@ -3,7 +3,7 @@ MAINTAINER Nathan Rzepecki <nathan@lionslair.net.au>
 
 RUN apt-get update && apt-get install -y
 
-# add Nhinx
+# add nginx
 #RUN apt-get install -y nginx
 
 # Add normal packages
