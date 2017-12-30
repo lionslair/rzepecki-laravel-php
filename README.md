@@ -1,5 +1,22 @@
-This file contains instructions for how to update the image. The main purpose of this image is for running bitbucket pipelines.
+This file contains instructions for how to build and update a docker image.
+
+The main purpose of this image is for running bitbucket pipelines.
 
 Update the commands in the Dockerfile then RUN
 
 `docker build -t rzepecki-laravel-5-5-php-7-2 .`
+
+When you commit to the bitbucket repo it will then trigger the image to be rebuilt on dockerhub.
+
+## URLS
+* [https://hub.docker.com/r/lionslair/rzepecki-laravel-5-5-php-7-2/](rzepecki-laravel-5-5-php-7-2@dockerhub)
+* [https://bitbucket.org/lionslair/rzepecki-laravel-5.5-php-7.2](Bitbucket repo)
+
+## packages
+* PHP 7.2
+* phpunit
+* sqlite
+* git
+* composer
+* redis
+* yarn
