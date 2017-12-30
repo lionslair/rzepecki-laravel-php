@@ -10,8 +10,7 @@
   roles:
     - { role: geerlingguy.git }
     - { role: geerlingguy.nodejs }
-    - { role: ontic.composer }
+    - { role: geerlingguy.composer }
     - { role: ontic.redis }
     - { role: ocha.yarn }
-    - { role: webofmars.phpunit }
     - { role: phansible.sqlite }

@@ -1,4 +1,0 @@
----
-# defaults file for phpunit
-phpunit_debian_packages:
-  - phpunit
