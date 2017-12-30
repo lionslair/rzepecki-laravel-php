@@ -2,12 +2,14 @@
 - hosts: all
   become: yes
 
-  tasks:
+  pre_tasks:
     - include: tasks/general-packages.yml
+
     - include: tasks/php-7-2.yml
 
   roles:
-    - { role: nsops.nodejs, version: "6.x" }
+    - { role: geerlingguy.git }
+    - { role: geerlingguy.nodejs }
     - { role: ontic.composer }
     - { role: ontic.redis }
     - { role: ocha.yarn }
