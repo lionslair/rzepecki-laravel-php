@@ -1,0 +1,2 @@
+- apt: name="{{ item }}" state="present"
+  with_items: "{{ phpunit_debian_packages }}"

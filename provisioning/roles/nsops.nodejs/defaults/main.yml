@@ -1,0 +1,4 @@
+nodejs_version: "6.x"
+nodejs_url: https://raw.githubusercontent.com/nodesource/distributions/master/deb/setup_{{ nodejs_version }}
+
+npm_prefix: "/usr/local/lib/npm"

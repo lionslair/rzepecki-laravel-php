@@ -1,0 +1,15 @@
+---
+- hosts: all
+  become: yes
+
+  tasks:
+    - include: tasks/general-packages.yml
+    - include: tasks/php-7-2.yml
+
+  roles:
+    - { role: nsops.nodejs, version: "6.x" }
+    - { role: ontic.composer }
+    - { role: ontic.redis }
+    - { role: ocha.yarn }
+    - { role: webofmars.phpunit }
+    - { role: phansible.sqlite }

@@ -1,0 +1,42 @@
+---
+- name: Download NodeJS installation script
+  get_url: url={{ nodejs_url }}
+    dest=~/node_setup.sh
+
+- name: Add node repository
+  command: bash node_setup.sh
+    chdir=~
+  become: yes
+
+- name: Install nodejs and dependencies
+  apt: name={{ item }} state=present
+  with_items:
+    - build-essential
+    - nodejs
+
+- name: Symlink to just "node"
+  file:
+    src=/usr/bin/nodejs
+    dest=/usr/bin/node
+    state=link
+  become: yes
+
+- name: Create npm global directory
+  file:
+    path: "{{ npm_prefix }}"
+    state: directory
+
+- name: Add npm_prefix bin directory to $PATH
+  lineinfile: dest=/etc/profile line="export PATH={{ npm_prefix }}/bin:$PATH"
+  args:
+    state: present
+
+- name: Set NPM prefix
+  lineinfile: dest=/etc/profile line="export NPM_CONFIG_PREFIX={{ npm_prefix }}"
+  args:
+    state: present
+
+- name: Set NODE_PATH
+  lineinfile: dest=/etc/profile line="export NODE_PATH=$NODE_PATH:{{ npm_prefix }}/lib/node_modules"
+  args:
+    state: present

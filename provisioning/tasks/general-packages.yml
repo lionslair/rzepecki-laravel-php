@@ -1,0 +1,26 @@
+---
+  
+- name: Install the general packages.
+  apt: "name={{ item }} state=installed"
+  with_items:
+    - git
+    - curl
+    - wget
+    - sudo
+    - zip
+    - unzip
+    - bzip2
+    - tar
+    - less
+    - openssh-client
+    - gettext
+    - ruby
+    - python
+    - python3
+    - perl
+    - memcached
+    - libzip-dev
+    - libmcrypt-dev
+    - apt-transport-https
+    - automake
+    - autoconf

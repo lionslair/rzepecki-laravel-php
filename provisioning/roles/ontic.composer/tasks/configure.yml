@@ -1,0 +1,49 @@
+# Copyright (c) Ontic. (http://www.ontic.com.au). All rights reserved.
+# See the COPYING file bundled with this package for license details.
+
+---
+
+- name: 'Composer | Ensure composer directory exists.'
+  become: yes
+  file:
+    path: '{{ composer_home_path }}'
+    owner: '{{ composer_home_owner }}'
+    group: '{{ composer_home_group }}'
+    state: 'directory'
+
+- name: 'Composer | Add GitHub OAuth token when present.'
+  become: yes
+  template:
+    src: 'auth.json.j2'
+    dest: '{{ composer_home_path }}/auth.json'
+    owner: '{{ composer_home_owner }}'
+    group: '{{ composer_home_group }}'
+  when: 'composer_github_oauth_token'
+
+- name: 'Composer | Remove GitHub OAuth token when not present.'
+  become: yes
+  file:
+    path: '{{ composer_home_path }}/auth.json'
+    state: 'absent'
+  when: 'not composer_github_oauth_token'
+
+- name: 'Composer | Install globally required packages.'
+  become: yes
+  become_user: '{{ composer_home_owner }}'
+  shell: >
+    COMPOSER_HOME={{ composer_home_path }}
+    composer global require {{ item.name }}:{{ item.release | default('@stable') }} --no-progress
+    creates='{{ composer_home_path }}/vendor/{{ item.name }}'
+  register: 'composer_global_require_result'
+  with_items: '{{ composer_global_packages }}'
+  when: 'composer_global_packages | default(None) != None'
+
+- name: 'Composer | Add composer directory to global path.'
+  become: yes
+  template:
+    src: 'composer.sh.j2'
+    dest: '/etc/profile.d/composer.sh'
+    owner: 'root'
+    group: 'root'
+    mode: '0644'
+  when: 'composer_add_to_path'

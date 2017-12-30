@@ -1,0 +1,22 @@
+galaxy_info:
+  author: Frederic Leger
+  description: Ansible role to install phpunit on Debian.
+  company: webofmars
+
+  license: BSD
+
+  min_ansible_version: 1.4
+
+  platforms:
+  - name: Debian
+    versions:
+    - all
+
+  galaxy_tags:
+    - web
+    - development
+    - php
+    - librairies
+    - phpunit
+
+dependencies: []
