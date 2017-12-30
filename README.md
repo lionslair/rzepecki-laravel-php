@@ -9,8 +9,8 @@ Update the commands in the Dockerfile then RUN
 When you commit to the bitbucket repo it will then trigger the image to be rebuilt on dockerhub.
 
 ## URLS
-* [https://hub.docker.com/r/lionslair/rzepecki-laravel-5-5-php-7-2/](rzepecki-laravel-5-5-php-7-2@dockerhub)
-* [https://bitbucket.org/lionslair/rzepecki-laravel-5.5-php-7.2](Bitbucket repo)
+* [rzepecki-laravel-5-5-php-7-2@dockerhub](https://hub.docker.com/r/lionslair/rzepecki-laravel-5-5-php-7-2/)
+* [Bitbucket repo](https://bitbucket.org/lionslair/rzepecki-laravel-5.5-php-7.2)
 
 ## packages
 * PHP 7.2
