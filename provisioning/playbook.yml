@@ -2,15 +2,20 @@
 - hosts: all
   become: yes
 
+  vars:
+    php_version: '7.2'
+
   pre_tasks:
     - include: tasks/general-packages.yml
 
-    - include: tasks/php-7-2.yml
+    #- include: tasks/php-7-2.yml
 
   roles:
+    - { role: geerlingguy.php-versions }
+    - { role: geerlingguy.php }
+    - { role: geerlingguy.composer }
     - { role: geerlingguy.git }
     - { role: geerlingguy.nodejs }
-    - { role: geerlingguy.composer }
-    - { role: ontic.redis }
+    - { role: geerlingguy.redis }
     - { role: ocha.yarn }
     - { role: phansible.sqlite }

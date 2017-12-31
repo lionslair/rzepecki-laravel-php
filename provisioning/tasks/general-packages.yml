@@ -1,6 +1,6 @@
 ---
 - name: Install the general packages.
-  apt: "name={{ item}} state=latest update_cache=yes"
+  apt: "name={{ item }} state=latest update_cache=yes"
   with_items:
     - curl
     - wget
