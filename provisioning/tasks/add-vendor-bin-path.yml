@@ -1,0 +1,13 @@
+---
+ - name: Add another bin dir to system-wide $PATH.
+      copy:
+        dest: /etc/profile.d/custom-path.sh
+        content: 'PATH=$PATH:{{ my_custom_path_var }}'
+
+# - name: add {{extra_path}} to path
+#    lineinfile: >
+#    dest=/etc/environment
+#    state=present
+#    backrefs=yes
+#    regexp='PATH=(["]*)((?!.*?{{extra_path}}).*?)(["]*)$'
+#    line="PATH=\1\2:{{extra_path}}\3"

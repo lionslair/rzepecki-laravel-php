@@ -7,6 +7,11 @@ RUN apt-get update \
        python-software-properties \
        software-properties-common \
        rsyslog systemd systemd-cron sudo \
+       curl wget less gettext \
+       zip unzip bzip2 tar \
+       ruby python python3 perl \
+       memcached libzip-dev libmcrypt-dev \
+       apt-transport-https automake autoconf \
     && rm -Rf /var/lib/apt/lists/* \
     && rm -Rf /usr/share/doc && rm -Rf /usr/share/man \
     && apt-get clean

@@ -1,5 +1,0 @@
----
-- name: Add another bin dir to system-wide $PATH.
-  copy:
-    dest: /etc/profile.d/composer-path.sh
-    content: 'export PATH=/vendor/bin:$PATH'
