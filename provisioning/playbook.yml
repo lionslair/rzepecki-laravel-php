@@ -3,7 +3,27 @@
   become: yes
 
   vars:
+    php_enablerepo: 'ppa:ondrej/php'
     php_version: '7.2'
+    php_packages_extra:
+      - bcmath
+      - bz2
+      - dba
+      - gmp
+      - imap
+      - intl
+      - ldap
+      - interbase
+      - mbstring
+      - mysql
+      - obdc
+      - pgsql
+      - pspell
+      - readline
+      - snmp
+      - skybase
+      - tidy
+      - xmlrpc
 
   pre_tasks:
     - include: tasks/general-packages.yml
