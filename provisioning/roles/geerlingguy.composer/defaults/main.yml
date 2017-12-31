@@ -17,7 +17,7 @@ composer_add_to_path: true
 
 # Add a project vendor/bin directory to the PATH
 composer_add_project_to_path: true
-# composer_project_path: '/vendor/bin'
+composer_project_path: '/vendor/bin'
 
 # GitHub OAuth token (used to help overcome API rate limits).
 composer_github_oauth_token: ''
