@@ -3,6 +3,7 @@
   become: yes
 
   vars:
+    extra_path: /vendor/bin
     php_version: '7.2'
     php_packages_extra:
       - "php{{ php_version }}-bcmath"
@@ -26,6 +27,7 @@
 
   pre_tasks:
     - include: tasks/general-packages.yml
+    - include: tasks/add-extra-path.yml
 
   roles:
     - { role: geerlingguy.php-versions, when: php_version != '', tags: ['php'] }
