@@ -1,13 +1,6 @@
 ---
-- name: Add vendor bin dir to system-wide $PATH.
-  copy:
-    dest: /etc/profile.d/composer-vendor-bin-path.sh
-    content: 'PATH=$PATH:{{ vendor_bin_extra_path }}'
-
-# - name: add {{vendor_bin_extra_path}} to path
-#    lineinfile: >
-#    dest=/etc/environment
-#    state=present
-#    backrefs=yes
-#    regexp='PATH=(["]*)((?!.*?{{extra_path}}).*?)(["]*)$'
-#    line="PATH=\1\2:{{extra_path}}\3"
+- name: Add vendor bin dir to root .profile
+  lineinfile:
+    path: /root/.profile
+    line: 'PATH="/vendor/bin:$PATH"'
+  tags: ['paths']

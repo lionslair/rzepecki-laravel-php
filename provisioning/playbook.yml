@@ -3,7 +3,6 @@
   become: yes
 
   vars:
-    vendor_bin_extra_path: '/vendor/bin'
     php_version: '7.2'
     php_packages_extra:
       - "php{{ php_version }}-bcmath"
@@ -31,9 +30,9 @@
   roles:
     - { role: geerlingguy.php-versions, when: php_version != '', tags: ['php'] }
     - { role: geerlingguy.php, tags: ['php'] }
-    - { role: geerlingguy.composer, tags: ['php'] }
+    - { role: geerlingguy.composer, tags: ['php', 'composer'] }
     - { role: geerlingguy.git }
     - { role: geerlingguy.nodejs }
-    - { role: geerlingguy.redis }
     - { role: ocha.yarn }
     - { role: phansible.sqlite }
+    - { role: geerlingguy.redis }
