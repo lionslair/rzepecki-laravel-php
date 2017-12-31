@@ -3,7 +3,7 @@
   become: yes
 
   vars:
-    extra_path: '/vendor/bin'
+    vendor_bin_extra_path: '/vendor/bin'
     php_version: '7.2'
     php_packages_extra:
       - "php{{ php_version }}-bcmath"

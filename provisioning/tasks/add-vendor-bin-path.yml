@@ -1,8 +1,8 @@
 ---
- - name: Add another bin dir to system-wide $PATH.
+ - name: Add vendor bin dir to system-wide $PATH.
       copy:
-        dest: /etc/profile.d/custom-path.sh
-        content: 'PATH=$PATH:{{ my_custom_path_var }}'
+        dest: /etc/profile.d/composer-vendor-bin-path.sh
+        content: 'PATH=$PATH:{{ vendor_bin_extra_path }}'
 
 # - name: add {{extra_path}} to path
 #    lineinfile: >
