@@ -27,8 +27,6 @@
   pre_tasks:
     - include: tasks/general-packages.yml
 
-    #- include: tasks/php-7-2.yml
-
   roles:
     - { role: geerlingguy.php-versions, when: php_version != '', tags: ['php'] }
     - { role: geerlingguy.php, tags: ['php'] }
