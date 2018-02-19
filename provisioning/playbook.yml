@@ -23,6 +23,7 @@
       - "php{{ php_version }}-sybase"
       - "php{{ php_version }}-tidy"
       - "php{{ php_version }}-xmlrpc"
+      - "php{{ php_version }}-zip"
 
   pre_tasks:
     - include: tasks/add-vendor-bin-path.yml
