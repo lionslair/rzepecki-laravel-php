@@ -24,7 +24,6 @@
       - "php{{ php_version }}-tidy"
       - "php{{ php_version }}-xmlrpc"
       - "php{{ php_version }}-zip"
-    elasticsearch_network_host: 0.0.0.0
 
   pre_tasks:
     - include: tasks/add-vendor-bin-path.yml
@@ -38,5 +37,3 @@
     - { role: ocha.yarn }
     - { role: phansible.sqlite }
     - { role: geerlingguy.redis }
-    - { role: geerlingguy.java }
-    - { role: geerlingguy.elasticsearch }

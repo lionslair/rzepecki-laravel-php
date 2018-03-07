@@ -24,5 +24,3 @@ Run the container locally after building.
 * composer
 * redis
 * yarn
-* java
-* elasticsearch
