@@ -16,6 +16,11 @@ RUN apt-get update \
        ruby python python3 perl \
        memcached libzip-dev libmcrypt-dev \
        apt-transport-https automake autoconf \
+       libxpm4 libxrender1 libgtk2.0-0 \
+       libnss3 libgconf-2-4 chromium-browser \
+       xvfb gtk2-engines-pixbuf xfonts-cyrillic \
+       xfonts-100dpi xfonts-75dpi xfonts-base \
+       xfonts-scalable imagemagick x11-apps
     && rm -Rf /var/lib/apt/lists/* \
     && rm -Rf /usr/share/doc && rm -Rf /usr/share/man \
     && apt-get clean
@@ -53,11 +58,3 @@ CMD ["/lib/systemd/systemd"]
 #RUN echo "mysql-server mysql-server/root_password_again password " | debconf-set-selections
 #RUN apt-get -y install mysql-server mysql-client libmysqlclient-dev
 #RUN mysql_secure_installation
-
-# Install The Chrome Web Driver & Dusk Utilities
-
-apt-get -y install libxpm4 libxrender1 libgtk2.0-0 \
-libnss3 libgconf-2-4 chromium-browser \
-xvfb gtk2-engines-pixbuf xfonts-cyrillic \
-xfonts-100dpi xfonts-75dpi xfonts-base \
-xfonts-scalable imagemagick x11-apps
