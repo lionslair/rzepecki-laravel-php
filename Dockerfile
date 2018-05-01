@@ -29,7 +29,8 @@ RUN apt-get update \
   libnss3 libgconf-2-4 chromium-browser \
   xvfb gtk2-engines-pixbuf xfonts-cyrillic \
   xfonts-100dpi xfonts-75dpi xfonts-base \
-  xfonts-scalable imagemagick x11-apps
+  xfonts-scalable imagemagick x11-apps \
+  jpegoptim optipng pngquant gifsicle
 
 # Install Ansible
 RUN add-apt-repository -y ppa:ansible/ansible \
@@ -51,8 +52,11 @@ RUN echo "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
 COPY ./ /etc/ansible/laravel-vm
 COPY ./provisioning/docker/vars/docker-hub-overrides.yml /etc/ansible/laravel-vm/local.config.yml
 
-# Provision Drupal VM inside Docker.
+# Provision Ubuntu VM inside Docker.
 RUN ansible-playbook /etc/ansible/laravel-vm/provisioning/playbook.yml
+
+# one last item
+RUN npm install -g svgo
 
 CMD ["/lib/systemd/systemd"]
 
