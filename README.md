@@ -16,6 +16,9 @@ Run the container locally after building.
 * [rzepecki-laravel-php-7-2@dockerhub](https://hub.docker.com/r/lionslair/rzepecki-laravel-php-7-2/)
 * [Bitbucket repo](https://bitbucket.org/lionslair/rzepecki-laravel-php-7.2)
 
+## OS image
+* Ubuntu 16.04
+
 ## packages
 * PHP 7.2
 * phpunit
