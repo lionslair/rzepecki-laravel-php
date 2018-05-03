@@ -113,7 +113,7 @@ mysql_databases:
 # Users.
 mysql_users:
   - name: homestead
-    host: 127.0.0.1
+    host: localhost
     password: secret
     priv: "*.*:USAGE"
 
