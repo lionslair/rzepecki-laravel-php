@@ -10,12 +10,10 @@ mysql_users:
   - name: homestead
     host: localhost
     password: secret
-    encrypted: yes
     priv: "homestead.*:ALL"
   - name: homestead
     host: localhost
     password: secret
-    encrypted: yes
     priv: "tenant_test.*:ALL"
 
 php_version: '7.2'
