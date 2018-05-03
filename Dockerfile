@@ -30,7 +30,8 @@ RUN apt-get update \
   xvfb gtk2-engines-pixbuf xfonts-cyrillic \
   xfonts-100dpi xfonts-75dpi xfonts-base \
   xfonts-scalable imagemagick x11-apps \
-  jpegoptim optipng pngquant gifsicle
+  jpegoptim optipng pngquant gifsicle \
+  ffmpeg imagemagick ghostscript
 
 # Install Ansible
 RUN add-apt-repository -y ppa:ansible/ansible \
