@@ -104,18 +104,18 @@ mysql_config_include_files: []
 #  - { src: path/relative/to/playbook/anotherfile.cnf, force: yes }
 
 # Databases.
-mysql_databases:
-  - name: homestead
-    collation: utf8mb4_unicode_ci
-    encoding: utf8mb4
-    replicate: 0
+mysql_databases: []
+#   - name: example
+#     collation: utf8_general_ci
+#     encoding: utf8
+#     replicate: 1
 
 # Users.
-mysql_users:
-  - name: homestead
-    host: localhost
-    password: secret
-    priv: "*.*:USAGE"
+mysql_users: []
+#   - name: example
+#     host: 127.0.0.1
+#     password: secret
+#     priv: *.*:USAGE
 
 # Replication settings (replication is only enabled if master/user have values).
 mysql_server_id: "1"
