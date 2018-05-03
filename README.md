@@ -20,6 +20,7 @@ Run the container locally after building.
 * Ubuntu 16.04
 
 ## packages
+* MySQL
 * PHP 7.2
 * phpunit
 * sqlite
