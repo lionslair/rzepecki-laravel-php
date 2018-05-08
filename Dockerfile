@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 MAINTAINER Nathan Rzepecki <nathan@lionslair.net.au>
 
 # Install dependencies.
