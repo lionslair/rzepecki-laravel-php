@@ -4,7 +4,6 @@ MAINTAINER Nathan Rzepecki <nathan@lionslair.net.au>
 # Install dependencies.
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-       python-software-properties \
        software-properties-common \
        rsyslog systemd systemd-cron sudo \
        curl wget less gettext \
