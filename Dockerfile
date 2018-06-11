@@ -30,7 +30,8 @@ RUN apt-get update \
   xfonts-100dpi xfonts-75dpi xfonts-base \
   xfonts-scalable imagemagick x11-apps \
   jpegoptim optipng pngquant gifsicle \
-  ffmpeg imagemagick ghostscript libpng-dev
+  ffmpeg imagemagick ghostscript libpng-dev \
+  snmp snmp-mibs-downloader
 
 # Install Ansible
 RUN add-apt-repository -y ppa:ansible/ansible \
