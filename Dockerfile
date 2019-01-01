@@ -53,6 +53,9 @@ RUN echo "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
 COPY ./ /etc/ansible/laravel-vm
 COPY ./provisioning/docker/vars/docker-hub-overrides.yml /etc/ansible/laravel-vm/local.config.yml
 
+# Get the roles
+RUN ansible-galaxy install -r  /etc/ansible/laravel-vm/provisioning/requirements.yml
+
 # Provision Ubuntu VM inside Docker.
 RUN ansible-playbook /etc/ansible/laravel-vm/provisioning/playbook.yml
 
