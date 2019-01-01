@@ -1,9 +1,0 @@
-- src: phansible.sqlite
-- src: ocha.yarn
-- src: geerlingguy.redis
-- src: geerlingguy.git
-- src: geerlingguy.mysql
-- src: geerlingguy.nodejs
-- src: geerlingguy.php
-- src: geerlingguy.php-versions
-- src: geerlingguy.composer
