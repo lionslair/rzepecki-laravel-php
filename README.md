@@ -4,24 +4,24 @@ The main purpose of this image is for running bitbucket pipelines.
 
 Update the commands in the Dockerfile or Ansible then RUN
 
-`docker build -t rzepecki-laravel-php-7-2 .`
+`docker build -t rzepecki-laravel-php .`
 
 When you commit to the bitbucket repo it will then trigger the image to be rebuilt on dockerhub.
 
 Run the container locally after building.
 
-`docker run -i -t -P rzepecki-laravel-php-7-2:latest /lib/systemd/systemd`
+`docker run -i -t -P rzepecki-laravel-php:latest /lib/systemd/systemd`
 
 ## URLS
-* [rzepecki-laravel-php-7-2@dockerhub](https://hub.docker.com/r/lionslair/rzepecki-laravel-php-7-2/)
-* [Bitbucket repo](https://bitbucket.org/lionslair/rzepecki-laravel-php-7.2)
+* [rzepecki-laravel-php-7-2@dockerhub](https://hub.docker.com/r/lionslair/rzepecki-laravel-php/)
+* [Bitbucket repo](https://bitbucket.org/lionslair/rzepecki-laravel-php)
 
 ## OS image
 * Ubuntu 18.04
 
 ## packages
 * MySQL
-* PHP 7.2
+* PHP 7.3
 * phpunit
 * sqlite
 * git

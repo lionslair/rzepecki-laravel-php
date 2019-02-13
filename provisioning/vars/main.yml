@@ -13,7 +13,7 @@ mysql_users:
     priv: "*.*:ALL"
 
 php_enable_webserver: false
-php_version: '7.2'
+php_version: '7.3'
 php_packages_extra:
   - "php{{ php_version }}-bcmath"
   - "php{{ php_version }}-bz2"
