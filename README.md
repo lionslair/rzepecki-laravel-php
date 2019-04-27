@@ -29,3 +29,4 @@ Run the container locally after building.
 * redis
 * yarn
 * chromedriver - webdriver
+* ffmpeg
