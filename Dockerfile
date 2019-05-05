@@ -26,7 +26,6 @@ ARG CHROME_DRIVER_VERSION=2.42
 
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
-  zip wget unzip \
   libxpm4 libxrender1 libgtk2.0-0 xdg-utils \
   libnss3 libgconf-2-4 \
   xvfb gtk2-engines-pixbuf xfonts-cyrillic \
