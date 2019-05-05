@@ -21,34 +21,17 @@ RUN sed -i 's/^\($ModLoad imklog\)/#\1/' /etc/rsyslog.conf
 #RUN curl https://packages.microsoft.com/config/ubuntu/18.04/prod.list > /etc/apt/sources.list.d/mssql-release.list
 
 # Install The Chrome Web Driver & Dusk Utilities
-# chrome driver 2.42 should really use a variable of some sort
 
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
   libxpm4 libxrender1 libgtk2.0-0 \
-  libnss3 libgconf-2-4 \
+  libnss3 libgconf-2-4 chromium-browser \
   xvfb gtk2-engines-pixbuf xfonts-cyrillic \
   xfonts-100dpi xfonts-75dpi xfonts-base \
   xfonts-scalable imagemagick x11-apps \
   jpegoptim optipng pngquant gifsicle \
   ffmpeg imagemagick ghostscript libpng-dev \
   snmp snmp-mibs-downloader graphviz
-  # chromium-browser \
-
-ARG CHROME_DRIVER_VERSION=stable
-ENV CHROME_DRIVER_VERSION ${CHROME_DRIVER_VERSION}
-
-RUN apt-get -y install xdg-utils \
-  && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
-  && dpkg -i --force-depends google-chrome-stable_current_amd64.deb \
-  && apt-get -y -f install \
-  && dpkg -i --force-depends google-chrome-stable_current_amd64.deb \
-  && rm google-chrome-stable_current_amd64.deb \
-  && wget https://chromedriver.storage.googleapis.com/${CHROME_DRIVER_VERSION}/chromedriver_linux64.zip \
-  && unzip chromedriver_linux64.zip \
-  && mv chromedriver /usr/local/bin/ \
-  && rm chromedriver_linux64.zip
-
 
 # Install Ansible
 RUN add-apt-repository -y ppa:ansible/ansible \
