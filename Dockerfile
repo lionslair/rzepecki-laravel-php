@@ -22,19 +22,22 @@ RUN sed -i 's/^\($ModLoad imklog\)/#\1/' /etc/rsyslog.conf
 
 # Install The Chrome Web Driver & Dusk Utilities
 # chrome driver 2.42 should really use a variable of some sort
-ARG CHROME_DRIVER_VERSION=2.42
 
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
-  libxpm4 libxrender1 libgtk2.0-0 xdg-utils \
+  libxpm4 libxrender1 libgtk2.0-0 \
   libnss3 libgconf-2-4 \
   xvfb gtk2-engines-pixbuf xfonts-cyrillic \
   xfonts-100dpi xfonts-75dpi xfonts-base \
   xfonts-scalable imagemagick x11-apps \
   jpegoptim optipng pngquant gifsicle \
   ffmpeg imagemagick ghostscript libpng-dev \
-  snmp snmp-mibs-downloader graphviz \
+  snmp snmp-mibs-downloader graphviz
   # chromium-browser \
+
+ARG CHROME_DRIVER_VERSION=2.42
+
+RUN apt-get -y install xdg-utils \
   && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
   && dpkg -i --force-depends google-chrome-stable_current_amd64.deb \
   && apt-get -y -f install \
