@@ -35,7 +35,8 @@ RUN apt-get update \
   snmp snmp-mibs-downloader graphviz
   # chromium-browser \
 
-ARG CHROME_DRIVER_VERSION=2.42
+ARG CHROME_DRIVER_VERSION=stable
+ENV CHROME_DRIVER_VERSION ${CHROME_DRIVER_VERSION}
 
 RUN apt-get -y install xdg-utils \
   && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
