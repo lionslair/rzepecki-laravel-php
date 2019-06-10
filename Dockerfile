@@ -7,7 +7,7 @@ RUN apt-get update \
        software-properties-common \
        rsyslog systemd systemd-cron sudo \
        curl wget less gettext \
-       zip unzip bzip2 tar \
+       zip unzip bzip2 tar apt-utils \
        ruby python python3 perl \
        memcached libzip-dev libmcrypt-dev \
        apt-transport-https automake autoconf \
