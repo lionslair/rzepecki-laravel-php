@@ -22,7 +22,8 @@ RUN sed -i 's/^\($ModLoad imklog\)/#\1/' /etc/rsyslog.conf
 
 # Install The Chrome Web Driver & Dusk Utilities
 
-RUN apt-get update \
+RUN add-apt-repository -y ppa:canonical-chromium-builds/stage \
+  && apt-get update \
   && apt-get install -y --no-install-recommends \
   libxpm4 libxrender1 libgtk2.0-0 \
   libnss3 libgconf-2-4 chromium-browser \
