@@ -8,7 +8,7 @@ RUN apt-get update \
        rsyslog systemd systemd-cron sudo \
        curl wget less gettext \
        zip unzip bzip2 tar apt-utils \
-       ruby python python3 perl \
+       ruby python python3 perl gnupg  \
        memcached libzip-dev libmcrypt-dev \
        apt-transport-https automake autoconf \
     && rm -Rf /var/lib/apt/lists/* \
@@ -37,13 +37,14 @@ RUN sed -i 's/^\($ModLoad imklog\)/#\1/' /etc/rsyslog.conf
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
   libxpm4 libxrender1 libgtk2.0-0 xdg-utils \
-  libnss3 libgconf-2-4 chromium-browser \
+  libnss3 libgconf-2-4 gnupg \
   xvfb gtk2-engines-pixbuf xfonts-cyrillic \
   xfonts-100dpi xfonts-75dpi xfonts-base \
   xfonts-scalable imagemagick x11-apps \
   jpegoptim optipng pngquant gifsicle \
   ffmpeg imagemagick ghostscript libpng-dev \
   snmp snmp-mibs-downloader graphviz \
+  && wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add - \
   && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
   && dpkg -i --force-depends google-chrome-stable_current_amd64.deb \
   && apt-get -y -f install \
