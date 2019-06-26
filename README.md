@@ -13,7 +13,7 @@ Run the container locally after building.
 `docker run -i -t -P rzepecki-laravel-php:latest /lib/systemd/systemd`
 
 ## URLS
-* [rzepecki-laravel-php-7-2@dockerhub](https://hub.docker.com/r/lionslair/rzepecki-laravel-php/)
+* [rzepecki-laravel-php@dockerhub](https://hub.docker.com/r/lionslair/rzepecki-laravel-php/)
 * [Bitbucket repo](https://bitbucket.org/lionslair/rzepecki-laravel-php)
 
 ## OS image
