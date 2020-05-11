@@ -7,3 +7,4 @@
 - src: geerlingguy.php
 - src: geerlingguy.php-versions
 - src: geerlingguy.composer
+- src: geerlingguy.php-redis

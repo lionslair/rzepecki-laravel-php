@@ -12,6 +12,7 @@
     - { role: geerlingguy.mysql }
     - { role: geerlingguy.php-versions, when: php_version != '', tags: ['php'] }
     - { role: geerlingguy.php, tags: ['php'] }
+    - { role: geerlingguy.php-redis, tags: ['php'] }
     - { role: geerlingguy.composer, tags: ['php', 'composer'] }
     - { role: geerlingguy.git }
     - { role: geerlingguy.nodejs }
