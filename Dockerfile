@@ -47,8 +47,8 @@ RUN apt-get update \
   fonts-liberation libappindicator3-1 libatk-bridge2.0-0 \
   libatspi2.0-0 libgtk-3-0 libxtst6 \
   && wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add - \
-  # && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
-  && wget https://www.dropbox.com/s/4noe3c07gfeoshp/google-chrome-stable_current_amd64.deb?dl=0 \
+  && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
+  # && wget https://www.dropbox.com/s/4noe3c07gfeoshp/google-chrome-stable_current_amd64.deb?dl=0 \
   && dpkg -i --force-depends google-chrome-stable_current_amd64.deb \
   && apt-get -y -f install \
   && dpkg -i --force-depends google-chrome-stable_current_amd64.deb \
