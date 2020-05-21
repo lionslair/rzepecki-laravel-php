@@ -48,7 +48,7 @@ RUN apt-get update \
   libatspi2.0-0 libgtk-3-0 libxtst6 \
   && wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add - \
   && CHROMECACHEBUSTER=$(date --utc "+%Y%m%d-%H%M%S") \
-  && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb?$CHROMECACHEBUSTER \
+  && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb?$CHROMECACHEBUSTER -O google-chrome-stable_current_amd64.deb \
   && dpkg -i --force-depends google-chrome-stable_current_amd64.deb \
   && apt-get -y -f install \
   && dpkg -i --force-depends google-chrome-stable_current_amd64.deb \
