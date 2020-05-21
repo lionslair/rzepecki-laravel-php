@@ -22,6 +22,7 @@ Run the container locally after building.
 ## packages
 * MySQL
 * PHP 7.4
+* php-redis
 * phpunit
 * sqlite
 * git
