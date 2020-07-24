@@ -56,7 +56,7 @@ RUN apt-get update \
   && CHROMEMAJORVERSION=$(echo ${$CHROMESTABLEVERSION%%.*}) \
   && rm google-chrome-stable_current_amd64.deb \
   # && CHROMEVERSION=$(curl https://chromedriver.storage.googleapis.com/LATEST_RELEASE) \
-  && CHROMEVERSION=$(curl https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROMEMAJORVERSION) \
+  && CHROMEVERSION=$(curl https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROMEMAJORVERSION}) \
   && wget https://chromedriver.storage.googleapis.com/$CHROMEVERSION/chromedriver_linux64.zip \
   && unzip chromedriver_linux64.zip \
   && mv chromedriver /usr/local/bin/ \
