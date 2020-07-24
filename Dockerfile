@@ -1,5 +1,5 @@
 FROM ubuntu:18.04
-MAINTAINER Nathan Rzepecki <nathan@lionslair.net.au>
+LABEL maintainer="Nathan Rzepecki <nathan@lionslair.net.au>"
 
 # Install dependencies.
 RUN apt-get update \
