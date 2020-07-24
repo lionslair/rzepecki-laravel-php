@@ -34,6 +34,8 @@ RUN sed -i 's/^\($ModLoad imklog\)/#\1/' /etc/rsyslog.conf
 #   ffmpeg imagemagick ghostscript libpng-dev \
 #   snmp snmp-mibs-downloader graphviz
 
+
+# Improvement. Try and run this with the apt command above
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
   libxpm4 libxrender1 libgtk2.0-0 xdg-utils \
@@ -53,7 +55,7 @@ RUN apt-get update \
   && apt-get -y -f install \
   && dpkg -i --force-depends google-chrome-stable_current_amd64.deb \
   && CHROMESTABLEVERSION=$(dpkg-deb -f google-chrome-stable_current_amd64.deb version) \
-  && CHROMEMAJORVERSION=$(echo ${$CHROMESTABLEVERSION%%.*}) \
+  && CHROMEMAJORVERSION=$(echo ${CHROMESTABLEVERSION%%.*}) \
   && rm google-chrome-stable_current_amd64.deb \
   # && CHROMEVERSION=$(curl https://chromedriver.storage.googleapis.com/LATEST_RELEASE) \
   && CHROMEVERSION=$(curl https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROMEMAJORVERSION}) \
