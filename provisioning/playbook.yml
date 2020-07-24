@@ -7,8 +7,6 @@
 
   pre_tasks:
     - include: tasks/add-vendor-bin-path.yml
-    - name: installing python-3 mysql libraries
-      apt: name=python3-mysqldb state=present
 
   roles:
     - { role: geerlingguy.mysql }
