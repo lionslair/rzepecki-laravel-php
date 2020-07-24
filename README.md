@@ -10,7 +10,7 @@ When you commit to the bitbucket repo it will then trigger the image to be rebui
 
 Run the container locally after building.
 
-`docker run -i -t -P rzepecki-laravel-php:latest /lib/systemd/systemd`
+`docker run -i -t -P lionslair/rzepecki-laravel-php:latest /lib/systemd/systemd`
 
 ## URLS
 * [rzepecki-laravel-php@dockerhub](https://hub.docker.com/r/lionslair/rzepecki-laravel-php/)
