@@ -54,11 +54,11 @@ RUN apt-get update \
   && dpkg -i --force-depends google-chrome-stable_current_amd64.deb \
   && apt-get -y -f install \
   && dpkg -i --force-depends google-chrome-stable_current_amd64.deb \
-  && CHROMESTABLEVERSION=$(dpkg-deb -f google-chrome-stable_current_amd64.deb version) \
-  && CHROMEMAJORVERSION=$(echo ${CHROMESTABLEVERSION%%.*}) \
+  # && CHROMESTABLEVERSION=$(dpkg-deb -f google-chrome-stable_current_amd64.deb version) \
+  # && CHROMEMAJORVERSION=$(echo ${CHROMESTABLEVERSION%%.*}) \
   && rm google-chrome-stable_current_amd64.deb \
-  # && CHROMEVERSION=$(curl https://chromedriver.storage.googleapis.com/LATEST_RELEASE) \
-  && CHROMEVERSION=$(curl https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROMEMAJORVERSION}) \
+  && CHROMEVERSION=$(curl https://chromedriver.storage.googleapis.com/LATEST_RELEASE) \
+  # && CHROMEVERSION=$(curl https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROMEMAJORVERSION}) \
   && wget https://chromedriver.storage.googleapis.com/$CHROMEVERSION/chromedriver_linux64.zip \
   && unzip chromedriver_linux64.zip \
   && mv chromedriver /usr/local/bin/ \
