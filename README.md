@@ -17,7 +17,7 @@ Run the container locally after building.
 * [Bitbucket repo](https://bitbucket.org/lionslair/rzepecki-laravel-php)
 
 ## OS image
-* Ubuntu 18.04
+* Ubuntu 20.04
 
 ## packages
 * MySQL
