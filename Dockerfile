@@ -14,7 +14,7 @@ RUN apt-get update \
     memcached libzip-dev libmcrypt-dev \
     apt-transport-https automake autoconf \
     libxpm4 libxrender1 libgtk2.0-0 xdg-utils \
-    libnss3 libgconf-2-4 gnupg \
+    libnss3 libgconf-2-4 \
     xvfb gtk2-engines-pixbuf xfonts-cyrillic \
     xfonts-100dpi xfonts-75dpi xfonts-base \
     xfonts-scalable imagemagick x11-apps \
