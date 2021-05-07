@@ -13,6 +13,7 @@ mysql_users:
     host: localhost
     password: secret
     priv: "*.*:ALL"
+mysql_datadir: /opt/atlassian/pipelines/agent/data
 
 php_enable_webserver: false
 php_version: '7.4'
