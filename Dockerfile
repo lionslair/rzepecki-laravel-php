@@ -42,7 +42,7 @@ RUN apt-get update \
     && rm -Rf /usr/share/doc && rm -Rf /usr/share/man \
     && apt-get clean \
     && wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.focal_amd64.deb -O wkhtmltox_0.12.6-1.focal_amd64.deb \
-    && dpkg -i --force-depends wkhtmltox_0.12.6-1.focal_amd64.deb --fix-broken \
+    && dpkg -i --force-depends wkhtmltox_0.12.6-1.focal_amd64.deb \
     && wkhtmltopdf --version \
     && rm wkhtmltox_0.12.6-1.focal_amd64.deb 
 
