@@ -1,0 +1,22 @@
+---
+- hosts: all
+  become: yes
+
+  vars_files:
+    - vars/main.yml
+    - vars/php74.yml
+
+  pre_tasks:
+    - include: tasks/add-vendor-bin-path.yml
+
+  roles:
+    - { role: geerlingguy.mysql }
+    - { role: geerlingguy.php-versions, when: php_version != '', tags: ['php'] }
+    - { role: geerlingguy.php, tags: ['php'] }
+    - { role: geerlingguy.php-redis, tags: ['php'] }
+    - { role: geerlingguy.composer, tags: ['php', 'composer'] }
+    - { role: geerlingguy.git }
+    - { role: geerlingguy.nodejs }
+    - { role: ocha.yarn }
+    - { role: phansible.sqlite }
+    - { role: geerlingguy.redis }

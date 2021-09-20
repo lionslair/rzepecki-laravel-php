@@ -4,6 +4,7 @@
 
   vars_files:
     - vars/main.yml
+    - vars/php80.yml
 
   pre_tasks:
     - include: tasks/add-vendor-bin-path.yml

@@ -14,14 +14,14 @@ Run the container locally after building.
 
 ## URLS
 * [rzepecki-laravel-php@dockerhub](https://hub.docker.com/r/lionslair/rzepecki-laravel-php/)
-* [Bitbucket repo](https://bitbucket.org/lionslair/rzepecki-laravel-php)
+* [Github repo](https://github.com/lionslair/rzepecki-laravel-php)
 
 ## OS image
 * Ubuntu 20.04
 
 ## packages
 * MySQL
-* PHP 7.4
+* PHP 7.4 | PHP 8.0
 * php-redis
 * phpunit
 * sqlite
