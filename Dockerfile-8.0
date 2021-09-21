@@ -65,7 +65,7 @@ COPY ./provisioning/docker/vars/docker-hub-overrides.yml /etc/ansible/laravel-vm
 RUN ansible-galaxy install -r /etc/ansible/laravel-vm/provisioning/requirements.yml
 
 # Provision Ubuntu VM inside Docker.
-RUN ansible-playbook /etc/ansible/laravel-vm/provisioning/playbook-php-8.yml
+RUN ansible-playbook /etc/ansible/laravel-vm/provisioning/playbook-php8.yml
 
 # one last item
 RUN npm install -g svgo
