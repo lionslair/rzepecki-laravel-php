@@ -17,6 +17,5 @@
     - { role: geerlingguy.composer, tags: ['php', 'composer'] }
     - { role: geerlingguy.git }
     - { role: geerlingguy.nodejs }
-    - { role: ocha.yarn }
     - { role: phansible.sqlite }
     - { role: geerlingguy.redis }

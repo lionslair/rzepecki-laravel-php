@@ -1,5 +1,4 @@
 - src: phansible.sqlite
-- src: ocha.yarn
 - src: geerlingguy.redis
 - src: geerlingguy.git
 - src: geerlingguy.mysql
