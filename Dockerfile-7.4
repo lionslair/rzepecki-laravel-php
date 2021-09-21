@@ -7,6 +7,8 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
     software-properties-common \
+    && add-apt-repository --yes --update ppa:ansible/ansible \
+    && apt-get install -y --no-install-recommends \
     rsyslog systemd systemd-cron sudo \
     curl wget less gettext \
     zip unzip bzip2 tar apt-utils \
