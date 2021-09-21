@@ -24,7 +24,7 @@ RUN apt-get update \
     ffmpeg imagemagick ghostscript libpng-dev \
     snmp snmp-mibs-downloader graphviz \
     fonts-liberation libappindicator3-1 libatk-bridge2.0-0 \
-    libatspi2.0-0 libgtk-3-0 libxtst6 ansible \
+    libatspi2.0-0 libgtk-3-0 libxtst6 libgbm1 ansible \
     && wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add - \
     && CHROMECACHEBUSTER=$(date --utc "+%Y%m%d-%H%M%S") \
     && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb?$CHROMECACHEBUSTER -O google-chrome-stable_current_amd64.deb \
