@@ -13,6 +13,6 @@ mysql_users:
     host: localhost
     password: secret
     priv: "*.*:ALL"
-mysql_enabled_on_startup: true
+mysql_python_package_debian: python3-mysqldb
 
 php_enable_webserver: false
