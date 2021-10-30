@@ -13,5 +13,6 @@ mysql_users:
     host: localhost
     password: secret
     priv: "*.*:ALL"
+mysql_enabled_on_startup: true
 
 php_enable_webserver: false

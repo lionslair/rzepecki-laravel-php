@@ -64,9 +64,6 @@ COPY ./provisioning/docker/vars/docker-hub-overrides.yml /etc/ansible/laravel-vm
 # Get the roles
 RUN ansible-galaxy install -r /etc/ansible/laravel-vm/provisioning/requirements.yml
 
-#what is in the directory
-RUN ls -lh /etc/ansible/laravel-vm/provisioning/
-
 # Provision Ubuntu VM inside Docker.
 RUN ansible-playbook /etc/ansible/laravel-vm/provisioning/playbook-php8.yml
 
