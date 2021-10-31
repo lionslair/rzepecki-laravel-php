@@ -52,8 +52,6 @@ RUN apt-get update \
     snmp-mibs-downloader \
     software-properties-common \
     sudo \
-#    systemd \
-#    systemd-cron \
     tar \
     unzip \
     wget \
