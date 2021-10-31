@@ -9,22 +9,59 @@ RUN apt-get update \
     software-properties-common \
     && add-apt-repository --yes --update ppa:ansible/ansible \
     && apt-get install -y --no-install-recommends \
-    rsyslog systemd systemd-cron sudo \
-    curl wget less gettext \
-    zip unzip bzip2 tar apt-utils \
-    ruby python perl gnupg  \
-    memcached libzip-dev libmcrypt-dev \
-    apt-transport-https automake autoconf \
-    libxpm4 libxrender1 libgtk2.0-0 xdg-utils \
+    ansible \
+    apt-transport-https \
+    apt-utils \
+    automake autoconf \
+    bzip2 \
+    curl \
+    ffmpeg \
+    fonts-liberation \
+    gettext \
+    ghostscript \
+    gifsicle \
+    gnupg  \
+    graphviz \
+    gtk2-engines-pixbuf \
+    imagemagick \
+    jpegoptim \
+    less \
+    libappindicator3-1 \
+    libatk-bridge2.0-0 \
+    libatspi2.0-0 \
+    libgbm1 \
+    libgtk-3-0 \
+    libgtk2.0-0 xdg-utils \
+    libmcrypt-dev \
     libnss3 libgconf-2-4 \
-    xvfb gtk2-engines-pixbuf xfonts-cyrillic \
-    xfonts-100dpi xfonts-75dpi xfonts-base \
-    xfonts-scalable imagemagick x11-apps \
-    jpegoptim optipng pngquant gifsicle \
-    ffmpeg imagemagick ghostscript libpng-dev \
-    snmp snmp-mibs-downloader graphviz \
-    fonts-liberation libappindicator3-1 libatk-bridge2.0-0 \
-    libatspi2.0-0 libgtk-3-0 libxtst6 libgbm1 ansible \
+    libpng-dev \
+    libxpm4 \
+    libxrender1 \
+    libxtst6 \
+    libzip-dev \
+    memcached \
+    optipng \
+    perl \
+    pngquant \
+    python \
+    rsyslog \
+    ruby \
+    snmp \
+    snmp-mibs-downloader \
+    sudo \
+    systemd \
+    systemd-cron \
+    tar \
+    unzip \
+    wget \
+    x11-apps \
+    xfonts-100dpi \
+    xfonts-75dpi \
+    xfonts-base \
+    xfonts-cyrillic \
+    xfonts-scalable \
+    xvfb \
+    zip \
     && wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add - \
     && CHROMECACHEBUSTER=$(date --utc "+%Y%m%d-%H%M%S") \
     && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb?$CHROMECACHEBUSTER -O google-chrome-stable_current_amd64.deb \
@@ -49,7 +86,9 @@ RUN apt-get update \
     && rm wkhtmltox_0.12.6-1.focal_amd64.deb 
 
 RUN sed -i 's/^\($ModLoad imklog\)/#\1/' /etc/rsyslog.conf
-#ADD etc/rsyslog.d/50-default.conf /etc/rsyslog.d/50-default.conf
+
+# Fix potential UTF-8 errors with ansible-test.
+RUN locale-gen en_US.UTF-8
 
 COPY initctl_faker .
 RUN chmod +x initctl_faker && rm -fr /sbin/initctl && ln -s /initctl_faker /sbin/initctl

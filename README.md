@@ -6,7 +6,7 @@ Update the commands in the Dockerfile or Ansible then RUN
 
 `docker build -t rzepecki-laravel-php .`
 
-When you commit to the bitbucket repo it will then trigger the image to be rebuilt on dockerhub.
+When you commit to the github repo it will then trigger the image to be rebuilt on github actions and publish to docker hub.
 
 Run the container locally after building.
 
