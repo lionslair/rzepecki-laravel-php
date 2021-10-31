@@ -47,6 +47,8 @@ RUN apt-get update \
     python3-setuptools \
     python3-yaml \
     rsyslog \
+    systemd \
+    systemd-cron \
     ruby \
     snmp \
     snmp-mibs-downloader \
@@ -117,7 +119,7 @@ RUN ansible-galaxy install -r /etc/ansible/laravel-vm/provisioning/requirements.
 RUN ps aux|grep systemd
 
 # Provision Ubuntu VM inside Docker.
-RUN ansible-playbook /etc/ansible/laravel-vm/provisioning/playbook-php8.yml
+RUN ansible-playbook -vvvvs /etc/ansible/laravel-vm/provisioning/playbook-php8.yml
 
 # one last item
 RUN npm install -g svgo
