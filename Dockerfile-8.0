@@ -119,7 +119,7 @@ RUN ansible-galaxy install -r /etc/ansible/laravel-vm/provisioning/requirements.
 RUN ps aux|grep systemd
 
 # Provision Ubuntu VM inside Docker.
-RUN ansible-playbook -vvvvs /etc/ansible/laravel-vm/provisioning/playbook-php8.yml
+RUN ansible-playbook -vvvv /etc/ansible/laravel-vm/provisioning/playbook-php8.yml
 
 # one last item
 RUN npm install -g svgo
