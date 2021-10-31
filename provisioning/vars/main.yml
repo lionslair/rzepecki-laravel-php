@@ -1,7 +1,6 @@
 ansible_python_interpreter: python3
 nodejs_install_npm_user: root
 
-mysql_root_password: root
 mysql_databases:
   - name: homestead
     encoding: utf8mb4
