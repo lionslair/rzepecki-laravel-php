@@ -118,6 +118,9 @@ RUN ansible-galaxy install -r /etc/ansible/laravel-vm/provisioning/requirements.
 # lets see what this outputs
 RUN ps aux|grep systemd
 
+# systemd status
+RUN systemctl status
+
 # ensure systemd running
 RUN systemctl daemon-reexec
 
