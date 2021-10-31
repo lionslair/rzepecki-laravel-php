@@ -8,9 +8,6 @@ ENV pip_packages "ansible"
 # Install dependencies.
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-    software-properties-common \   
-    && add-apt-repository --yes --update ppa:ansible/ansible \
-    && apt-get install -y --no-install-recommends \
     apt-transport-https \
     apt-utils \
     automake autoconf \
@@ -53,6 +50,7 @@ RUN apt-get update \
     ruby \
     snmp \
     snmp-mibs-downloader \
+    software-properties-common \
     sudo \
     systemd \
     systemd-cron \
