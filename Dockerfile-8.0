@@ -3,13 +3,14 @@ LABEL maintainer="Nathan Rzepecki <nathan@lionslair.net.au>"
 
 ARG DEBIAN_FRONTEND=noninteractive
 
+ENV pip_packages "ansible"
+
 # Install dependencies.
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
     software-properties-common \   
     && add-apt-repository --yes --update ppa:ansible/ansible \
     && apt-get install -y --no-install-recommends \
-    ansible \
     apt-transport-https \
     apt-utils \
     automake autoconf \
@@ -94,6 +95,8 @@ RUN sed -i 's/^\($ModLoad imklog\)/#\1/' /etc/rsyslog.conf
 # Fix potential UTF-8 errors with ansible-test.
 RUN locale-gen en_US.UTF-8
 
+# Install Ansible via Pip.
+RUN pip3 install $pip_packages
 
 COPY initctl_faker .
 RUN chmod +x initctl_faker && rm -fr /sbin/initctl && ln -s /initctl_faker /sbin/initctl
@@ -122,4 +125,3 @@ RUN ansible-playbook /etc/ansible/laravel-vm/provisioning/playbook-php8.yml
 
 # one last item
 RUN npm install -g svgo
-
