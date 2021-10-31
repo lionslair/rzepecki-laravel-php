@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:latest
 LABEL maintainer="Nathan Rzepecki <nathan@lionslair.net.au>"
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -108,9 +108,6 @@ RUN echo "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
 RUN rm -f /lib/systemd/system/systemd*udev* \
   && rm -f /lib/systemd/system/getty.target
 
-VOLUME ["/sys/fs/cgroup", "/tmp", "/run"]
-CMD ["/lib/systemd/systemd"]
-
 # Copy provisioning directory, variable overrides, and scripts into container.
 COPY ./ /etc/ansible/laravel-vm
 COPY ./provisioning/docker/vars/docker-hub-overrides.yml /etc/ansible/laravel-vm/local.config.yml
@@ -123,3 +120,6 @@ RUN ansible-playbook /etc/ansible/laravel-vm/provisioning/playbook-php8.yml
 
 # one last item
 RUN npm install -g svgo
+
+VOLUME ["/sys/fs/cgroup", "/tmp", "/run"]
+CMD ["/lib/systemd/systemd"]
