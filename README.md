@@ -4,7 +4,8 @@ The main purpose of this image is for running bitbucket pipelines.
 
 Update the commands in the Dockerfile or Ansible then RUN
 
-`docker build -t rzepecki-laravel-php .`
+`docker build -f Dockerfile-8.0 -t rzepecki-laravel-php-8.0 .`
+`docker build -f Dockerfile-7.4 -t rzepecki-laravel-php-7.4 .`
 
 When you commit to the github repo it will then trigger the image to be rebuilt on github actions and publish to docker hub.
 
