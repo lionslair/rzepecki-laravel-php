@@ -7,6 +7,9 @@ Update the commands in the Dockerfile or Ansible then RUN
 `docker build -f Dockerfile-8.0 -t rzepecki-laravel-php-8.0 .`
 `docker build -f Dockerfile-7.4 -t rzepecki-laravel-php-7.4 .`
 
+Use this for the testing image.
+`docker build -f Dockerfile-test -t rzepecki-laravel-test .`
+
 When you commit to the github repo it will then trigger the image to be rebuilt on github actions and publish to docker hub.
 
 Run the container locally after building.
