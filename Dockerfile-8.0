@@ -115,15 +115,6 @@ COPY ./provisioning/docker/vars/docker-hub-overrides.yml /etc/ansible/laravel-vm
 # Get the roles
 RUN ansible-galaxy install -r /etc/ansible/laravel-vm/provisioning/requirements.yml
 
-# lets see what this outputs
-RUN ps aux|grep systemd
-
-# systemd status
-RUN systemctl status
-
-# ensure systemd running
-RUN systemctl daemon-reexec
-
 # Provision Ubuntu VM inside Docker.
 RUN ansible-playbook -vvvv /etc/ansible/laravel-vm/provisioning/playbook-php8.yml
 
