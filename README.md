@@ -24,14 +24,12 @@ Run the container locally after building.
 * Ubuntu 20.04
 
 ## packages
-* MySQL
 * PHP 7.4 | PHP 8.0
 * php-redis
 * phpunit
 * sqlite
 * git
 * composer
-* redis
 * yarn
 * chromedriver - webdriver
 * ffmpeg
