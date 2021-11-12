@@ -10,7 +10,6 @@
     - include: tasks/add-vendor-bin-path.yml
 
   roles:
-    - { role: geerlingguy.mysql }
     - { role: geerlingguy.php-versions, when: php_version != '', tags: ['php'] }
     - { role: geerlingguy.php, tags: ['php'] }
     - { role: geerlingguy.php-redis, tags: ['php'] }
@@ -18,4 +17,3 @@
     - { role: geerlingguy.git }
     - { role: geerlingguy.nodejs }
     - { role: phansible.sqlite }
-    - { role: geerlingguy.redis }

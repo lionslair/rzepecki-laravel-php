@@ -19,12 +19,13 @@ RUN apt-get update \
        python3-pip \
        python3-yaml \
        software-properties-common \
-       rsyslog systemd systemd-cron sudo iproute2 \
+      #  rsyslog systemd systemd-cron sudo iproute2 \
+      rsyslog sudo iproute2 \
     && apt-get clean \
     && rm -Rf /var/lib/apt/lists/* \
     && rm -Rf /usr/share/doc && rm -Rf /usr/share/man
 
-RUN ln -s /bin/true /sbin/systemctl
+# RUN ln -s /bin/true /sbin/systemctl
 
 RUN sed -i 's/^\($ModLoad imklog\)/#\1/' /etc/rsyslog.conf
 
