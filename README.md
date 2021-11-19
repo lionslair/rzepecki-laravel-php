@@ -24,7 +24,7 @@ Run the container locally after building.
 * Ubuntu 20.04
 
 ## packages
-* PHP 7.4 | PHP 8.0
+* PHP 7.4 | PHP 8.0 | PHP 8.1
 * php-redis
 * phpunit
 * sqlite
