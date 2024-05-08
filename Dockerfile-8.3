@@ -65,6 +65,7 @@ RUN apt-get update \
     xfonts-scalable \
     xvfb \
     zip \
+    wkhtmltopdf \
     && wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add - \
     && CHROMECACHEBUSTER=$(date --utc "+%Y%m%d-%H%M%S") \
     && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb?$CHROMECACHEBUSTER -O google-chrome-stable_current_amd64.deb \
@@ -82,11 +83,11 @@ RUN apt-get update \
     && rm chromedriver_linux64.zip \
     && rm -Rf /var/lib/apt/lists/* \
     && rm -Rf /usr/share/doc && rm -Rf /usr/share/man \
-    && apt-get clean \
-    && wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.focal_amd64.deb -O wkhtmltox_0.12.6-1.focal_amd64.deb \
-    && dpkg -i --force-depends wkhtmltox_0.12.6-1.focal_amd64.deb \
-    && wkhtmltopdf --version \
-    && rm wkhtmltox_0.12.6-1.focal_amd64.deb 
+    && apt-get clean
+    # && wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.focal_amd64.deb -O wkhtmltox_0.12.6-1.focal_amd64.deb \
+    # && dpkg -i --force-depends wkhtmltox_0.12.6-1.focal_amd64.deb \
+    # && wkhtmltopdf --version \
+    # && rm wkhtmltox_0.12.6-1.focal_amd64.deb 
 
 RUN sed -i 's/^\($ModLoad imklog\)/#\1/' /etc/rsyslog.conf
 

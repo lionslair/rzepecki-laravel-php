@@ -1,7 +1,17 @@
-- src: phansible.sqlite
-- src: geerlingguy.git
-- src: geerlingguy.nodejs
-- src: geerlingguy.php
-- src: geerlingguy.php-versions
-- src: geerlingguy.composer
-- src: geerlingguy.php-redis
+---
+roles:
+  - src: phansible.sqlite
+  - src: geerlingguy.git
+  - src: geerlingguy.nodejs
+  - src: geerlingguy.php
+  - src: geerlingguy.php-versions
+  - src: geerlingguy.composer
+  - src: geerlingguy.php-redis
+
+collections:
+  - community.general
+  - community.crypto
+  - community.aws
+  - amazon.aws
+  - ansible.netcommon
+  - ansible.utils
