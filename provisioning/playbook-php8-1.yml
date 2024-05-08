@@ -15,5 +15,6 @@
     - { role: geerlingguy.php-redis, tags: ['php'] }
     - { role: geerlingguy.composer, tags: ['php', 'composer'] }
     - { role: geerlingguy.git }
-    - { role: geerlingguy.nodejs }
+    # - { role: geerlingguy.nodejs }
+    - { role: dgibbs64.nodejs }
     - { role: phansible.sqlite }

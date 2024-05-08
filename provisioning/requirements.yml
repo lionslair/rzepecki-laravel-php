@@ -7,6 +7,7 @@ roles:
   - src: geerlingguy.php-versions
   - src: geerlingguy.composer
   - src: geerlingguy.php-redis
+  - src: dgibbs64.nodejs
 
 collections:
   - community.general
