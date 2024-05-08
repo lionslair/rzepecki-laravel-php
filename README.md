@@ -4,6 +4,7 @@ The main purpose of this image is for running bitbucket pipelines.
 
 Update the commands in the Dockerfile or Ansible then RUN
 
+`docker build -f Dockerfile-8.3 -t rzepecki-laravel-php-8.3 .`
 `docker build -f Dockerfile-8.1 -t rzepecki-laravel-php-8.1 .`
 `docker build -f Dockerfile-8.0 -t rzepecki-laravel-php-8.0 .`
 `docker build -f Dockerfile-7.4 -t rzepecki-laravel-php-7.4 .`
@@ -22,7 +23,7 @@ Run the container locally after building.
 * Ubuntu 20.04
 
 ## packages
-* PHP 7.4 | PHP 8.0 | PHP 8.1
+* PHP 7.4 | PHP 8.0 | PHP 8.1 | PHP 8.3
 * php-redis
 * phpunit
 * sqlite

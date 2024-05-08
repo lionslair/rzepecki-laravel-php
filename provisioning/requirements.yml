@@ -11,7 +11,5 @@ roles:
 collections:
   - community.general
   - community.crypto
-  - community.aws
-  - amazon.aws
   - ansible.netcommon
   - ansible.utils
